@@ -9,9 +9,9 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var clients = require('./routes/clients');
 var projects = require('./routes/projects');
+var hours = require('./routes/hours');
 var app = express();
 
-    //qui va la connessione a mongd;)
 //     if(err) {
 //         console.log('connection error', err);
 //     } else {
@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/clients', clients);
 app.use('/projects', projects);
+app.use('/hours', hours);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
