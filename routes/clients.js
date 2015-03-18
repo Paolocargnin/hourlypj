@@ -8,11 +8,7 @@ var Clients = require('../models/Clients.js');
 router.get('/', function(req, res, next) {
   Clients.find(function (err, Clientss) {
     if (err) return next(err);
-    var rt = {
-      count: Clientss.length,
-      clients: Clientss
-    }
-    res.json(rt);
+    res.json(Clientss);
   });
 });
 
